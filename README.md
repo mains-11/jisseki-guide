@@ -11,7 +11,7 @@
 ```
 （リポジトリ直下）
 ├── index.html                      はじめに（トップ）
-├── jisseki.html                    必要書類の一覧
+├── jisseki.html                    必要書類の一覧（3グループに分けて表示）
 ├── jisseki-*.html                  書類ごとの説明（7ページ）
 ├── tejun.html                      入力手順の選択ページ
 ├── tejun-tsujo.html                通常枠の入力手順
@@ -83,4 +83,12 @@ SITE_NAME  = デジタル化・AI導入補助金｜実績報告ガイド
 SITE_SHORT = 実績報告ガイド            （スマホのヘッダー等）
 SITE_SUB   = 実績報告のご案内
 COMPANY    = 株式会社M'AINS
+MANUAL     = 公式マニュアル（Google Drive）のURL。全ページのサイドバーとフッターから開けます
+KANA_TOOL  = 口座名義変換ツールのURL。口座ページと入力手順の口座入力欄に配置
+FIXED_NO   = 添付ファイル名の先頭番号。書類の種類ごとに固定（1〜7）
 ```
+
+## リンク先を差し替えるとき
+
+公式マニュアルや口座名義変換ツールのURLが変わった場合は、`tools/build.py` 冒頭の
+`MANUAL` / `KANA_TOOL` を書き換えて再生成すれば、全ページに反映されます。

@@ -275,7 +275,8 @@ p { margin: 0 0 1.1rem; }
   border-color: var(--navy); background: var(--navy-tint);
   color: var(--navy-d); font-weight: 700;
 }
-.choices .pick::after { content: "  ← これを選ぶ"; font-size: .76rem; font-weight: 500; color: var(--seal); }
+.choices .pick b { font-size: .76rem; font-weight: 500; color: var(--seal); margin-left: .6em; }
+.choices .pick b::before { content: "← "; }
 
 /* ---------- 次へボタン（画面上のボタン表現） ---------- */
 .uibtn {
@@ -300,8 +301,8 @@ p { margin: 0 0 1.1rem; }
 }
 .warn { border-left-color: var(--seal); background: var(--seal-tint); }
 .note > :last-child, .warn > :last-child { margin-bottom: 0; }
-.note b, .warn b { display: block; margin-bottom: .2rem; }
-.warn b { color: var(--seal); }
+.note > b:first-child, .warn > b:first-child { display: block; margin-bottom: .2rem; }
+.warn > b:first-child { color: var(--seal); }
 
 /* ---------- 表 ---------- */
 .tablewrap { overflow-x: auto; margin: 0 0 1.3rem; }
@@ -410,3 +411,124 @@ th { background: var(--surface-2); font-weight: 700; white-space: nowrap; }
   .steps > li { break-inside: avoid; }
   a { color: #000; }
 }
+
+
+/* =========================================================
+   追加パーツ（初心者向けの補助表示）
+   ========================================================= */
+
+/* かんたんに言うと */
+.summary {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--seal);
+  border-radius: 2px;
+  padding: 1rem 1.15rem;
+  margin: 0 0 1.6rem;
+}
+.summary b { display: block; font-size: .82rem; color: var(--seal); margin-bottom: .25rem; }
+.summary p { margin: 0; font-size: 1rem; }
+
+/* 所要時間などのメタ表示 */
+.meta {
+  display: flex; flex-wrap: wrap; gap: .5rem 1.4rem;
+  font-size: .86rem; color: var(--ink-2);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: .7rem 0; margin: 0 0 1.8rem;
+}
+.meta span b { color: var(--ink); font-weight: 700; }
+
+/* チェックリスト */
+.check { list-style: none; margin: 0 0 1.3rem; padding: 0; }
+.check li { margin: 0 0 .1rem; }
+.check label {
+  display: flex; align-items: flex-start; gap: .7rem;
+  padding: .55rem .8rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: 2px;
+  background: var(--surface);
+  cursor: pointer;
+  font-size: .95rem; line-height: 1.7;
+}
+.check label:hover { border-color: var(--navy); }
+.check input { margin: .45rem 0 0; width: 1.05rem; height: 1.05rem; accent-color: var(--navy); flex: 0 0 auto; }
+.check input:checked + span { color: var(--ink-3); text-decoration: line-through; }
+
+/* OK / NG の対比 */
+.okng { display: grid; gap: .8rem; grid-template-columns: 1fr 1fr; margin: 0 0 1.4rem; }
+.okng > div {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 2px; padding: .9rem 1rem;
+}
+.okng h4 { margin: 0 0 .5rem; font-size: .92rem; }
+.okng .is-ok { border-top: 3px solid #1f7a5a; }
+.okng .is-ok h4 { color: #1f7a5a; }
+.okng .is-ng { border-top: 3px solid var(--seal); }
+.okng .is-ng h4 { color: var(--seal); }
+.okng ul { margin: 0; padding-left: 1.2em; font-size: .9rem; line-height: 1.8; }
+.okng li { margin-bottom: .25em; }
+@media (max-width: 700px) { .okng { grid-template-columns: 1fr; } }
+
+/* 用語の説明 */
+.terms { margin: 0 0 1.4rem; border-top: 1px solid var(--rule); }
+.terms > div { border-bottom: 1px solid var(--rule); padding: .8rem 0; }
+.terms dt { font-weight: 700; font-size: .95rem; margin-bottom: .15rem; }
+.terms dd { margin: 0; font-size: .92rem; color: var(--ink-2); }
+
+/* サイドバーの公式マニュアル導線 */
+.sidelink { padding: 1.1rem 1.5rem 0; }
+.sidelink a {
+  display: block; text-align: center;
+  border: 1px solid var(--navy); color: var(--navy);
+  border-radius: 3px; padding: .55em .5em;
+  font-size: .84rem; text-decoration: none; line-height: 1.5;
+}
+.sidelink a:hover { background: var(--navy-tint); }
+
+/* 大きな入口ボタン（トップの3ステップ） */
+.entry { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; gap: .8rem; }
+.entry a {
+  display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; align-items: start;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-left: 4px solid var(--navy);
+  border-radius: 2px; padding: 1.05rem 1.2rem;
+  text-decoration: none; color: var(--ink);
+}
+.entry a:hover { background: var(--surface-2); border-color: var(--navy); border-left-color: var(--navy); }
+.entry i {
+  font-style: normal; width: 2.6rem; height: 2.6rem;
+  display: grid; place-items: center;
+  background: var(--navy-tint); color: var(--navy-d);
+  border-radius: 2px; font-weight: 700; font-size: 1.05rem;
+}
+.entry strong { display: block; font-size: 1.02rem; }
+.entry span { display: block; font-size: .88rem; color: var(--ink-2); line-height: 1.75; margin-top: .15rem; }
+.entry em { display: block; font-style: normal; font-size: .78rem; color: var(--ink-3); margin-top: .3rem; }
+
+/* 書類グループの見出し */
+.grouplabel {
+  display: flex; align-items: baseline; gap: .7rem;
+  margin: 2.2rem 0 .8rem;
+}
+.grouplabel h3 { margin: 0; font-size: 1rem; }
+.grouplabel span { font-size: .82rem; color: var(--ink-3); }
+
+/* 番号つきの書類カード */
+.doclist { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: .6rem; }
+.doclist a {
+  display: grid; grid-template-columns: 1.9rem 1fr; gap: .9rem; align-items: start;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 2px;
+  padding: .85rem 1rem; text-decoration: none; color: var(--ink);
+}
+.doclist a:hover { border-color: var(--navy); background: var(--surface-2); }
+.doclist i {
+  font-style: normal; width: 1.9rem; height: 1.9rem;
+  display: grid; place-items: center;
+  background: var(--seal); color: #fff; border-radius: 2px;
+  font-size: .84rem; font-weight: 700;
+}
+.doclist strong { display: block; font-size: .98rem; }
+.doclist span { display: block; font-size: .86rem; color: var(--ink-2); line-height: 1.7; margin-top: .1rem; }
+
+@media print { .check input { display: none; } }
