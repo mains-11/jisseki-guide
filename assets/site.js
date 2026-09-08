@@ -47,6 +47,8 @@
     form.querySelectorAll('fieldset[data-inv]').forEach(function (fs) {
       fs.hidden = tsujo;
     });
+    var msg = document.getElementById('chooser-msg');
+    if (msg) msg.hidden = !tsujo;
     update();
   });
   update();
