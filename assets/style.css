@@ -560,3 +560,8 @@ th { background: var(--surface-2); font-weight: 700; white-space: nowrap; }
 }
 .panel[open] > summary { border-bottom: 1px solid var(--rule-soft); }
 .panel > *:not(summary) { margin-top: .9rem; margin-bottom: .9rem; }
+
+/* 「まとめ方はこちら」などの補助リンク */
+.hint { font-size: .9rem; margin: -.4rem 0 1.3rem; }
+.hint a { color: var(--navy); }
+.hint a::before { content: "→ "; color: var(--seal); }
