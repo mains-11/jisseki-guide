@@ -532,3 +532,31 @@ th { background: var(--surface-2); font-weight: 700; white-space: nowrap; }
 .doclist span { display: block; font-size: .86rem; color: var(--ink-2); line-height: 1.7; margin-top: .1rem; }
 
 @media print { .check input { display: none; } }
+
+/* 通常枠を選んだときの説明 */
+.chooser__msg {
+  margin: 0 0 1rem;
+  padding: .7rem .95rem;
+  background: var(--navy-tint);
+  border-left: 4px solid var(--navy);
+  border-radius: 0 3px 3px 0;
+  font-size: .92rem;
+  color: var(--navy-d);
+}
+
+/* 折りたたみ（details）を使う場合の見た目 */
+.panel {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--surface);
+  padding: 0 1.1rem;
+  margin: 0 0 1.3rem;
+}
+.panel > summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: .85rem 0;
+  font-size: .96rem;
+}
+.panel[open] > summary { border-bottom: 1px solid var(--rule-soft); }
+.panel > *:not(summary) { margin-top: .9rem; margin-bottom: .9rem; }
