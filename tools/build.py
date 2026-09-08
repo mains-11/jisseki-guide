@@ -13,8 +13,8 @@ PROGRAM = "デジタル化・AI導入補助金"          # 旧：IT導入補助�
 SITE_NAME = f"{PROGRAM}｜実績報告ガイド"
 SITE_SHORT = "実績報告ガイド"
 SITE_SUB = "実績報告のご案内"
-COMPANY = "株式会社M'AINS"
-CONTACT = "株式会社M'AINSの担当者"   # 問い合わせ先の言い方
+COMPANY = "株式会社MAIN'S"
+CONTACT = "株式会社MAIN'Sの担当者"   # 問い合わせ先の言い方
 PARTNER = "支援事業者"                  # 役割として呼ぶときの言い方
 
 MYPAGE = "https://portal.shinsei.it-shien.smrj.go.jp/"
