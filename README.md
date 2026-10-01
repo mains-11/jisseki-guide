@@ -12,7 +12,7 @@
 （リポジトリ直下）
 ├── index.html                      はじめに（トップ）
 ├── jisseki.html                    必要書類の一覧（3グループに分けて表示）
-├── jisseki-*.html                  書類ごとの説明（7ページ）
+├── jisseki-*.html                  書類ごとの説明（8ページ。jisseki-jisshi.html は役務導入者向け）
 ├── tejun.html                      入力手順の選択ページ
 ├── tejun-tsujo.html                通常枠の入力手順
 ├── tejun-inv-*.html                インボイス枠の入力手順（8パターン）
