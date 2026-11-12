@@ -588,3 +588,6 @@ th { background: var(--surface-2); font-weight: 700; white-space: nowrap; }
 }
 .example > b:first-child { display: block; font-size: .82rem; color: var(--ink-2); margin-bottom: .2rem; }
 .example > :last-child { margin-bottom: 0; }
+
+/* 手順の中の「A／B」などの小見出し */
+.way { margin: 1.3rem 0 .4rem; font-weight: 700; color: var(--navy-d); border-bottom: 1px solid var(--rule); padding-bottom: .2rem; }
