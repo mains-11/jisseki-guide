@@ -565,3 +565,26 @@ th { background: var(--surface-2); font-weight: 700; white-space: nowrap; }
 .hint { font-size: .9rem; margin: -.4rem 0 1.3rem; }
 .hint a { color: var(--navy); }
 .hint a::before { content: "→ "; color: var(--seal); }
+
+/* ---------- 画像つきの説明（8 みまもりパックの納品日 などで使用） ---------- */
+.shot {
+  margin: 1.2rem 0 1.4rem;
+  padding: .8rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  max-width: 30rem;
+}
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-soft); }
+.shot figcaption { margin-top: .5rem; font-size: .82rem; color: var(--ink-2); }
+
+/* 文面の例（そのまま送れる例文） */
+.example {
+  margin: .8rem 0;
+  padding: .8rem 1rem;
+  background: var(--surface-2);
+  border: 1px dashed var(--rule);
+  border-radius: 4px;
+}
+.example > b:first-child { display: block; font-size: .82rem; color: var(--ink-2); margin-bottom: .2rem; }
+.example > :last-child { margin-bottom: 0; }
